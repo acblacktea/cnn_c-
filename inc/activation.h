@@ -9,13 +9,13 @@ enum activation_type{
 
 class activation {
 public:
-    activation(activation a) {
+    activation(activation_type a) {
        type = a;
     }
-    virtual Matrix forward(Matrix X);
-    virtual Matrix backward(Matrix X);
-    virtual vector<vector<Matrix> > forward_cnn(vector<vector<Matrix> >X);
-    virtual vector<vector<Matrix> > backward_cnn(vector<vector<Matrix> >X);
+    Matrix forward(Matrix X);
+    Matrix backward(Matrix X);
+    vector<vector<Matrix> > forward_cnn(vector<vector<Matrix> >X);
+    vector<vector<Matrix> > backward_cnn(vector<vector<Matrix> >X);
     activation_type type;
     Matrix x_con;
     vector<vector<Matrix> > x_conv;

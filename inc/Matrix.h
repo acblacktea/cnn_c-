@@ -5,7 +5,7 @@
 #include<cstdio>
 #include<iostream>
 #include<vector>
-
+using namespace std;
 enum init_type{
     ZERO,XAVIER,ONE
 };
@@ -28,7 +28,7 @@ public:
     int w, h;
     Matrix operator+(Matrix &tmp)const;
     Matrix operator*(Matrix &tmp)const;
-    Matrix operator^(Matrix &tmp, int n)const;
+    Matrix operator^(int n)const;
     void init(init_type type);
 };
 #endif

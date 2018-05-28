@@ -3,23 +3,22 @@
 
 #include "nerual_block.h"
 
-class conectBlock : public nerualBlock{
+class connectBlock : public nerualBlock{
 public:
     connectBlock(int n,int m) {
       W = Matrix(n,m);
-      W.init(ZERO);
-      b = Matirx(1,m);
-      b.init(ZERO);
+      W.init(XAVIER);
+      b = Matrix(1,n);
+      b.init(XAVIER);
       W_gradent = Matrix(n, m);
       W_gradent.init(ZERO);
-      b_gradent = Matrix(1, m);
+      b_gradent = Matrix(1, n);
       b_gradent.init(ZERO);
     }
-private:
     Matrix forward(Matrix X);
     Matrix backward(Matrix X);
     Matrix W;
-    Matrix b
+    Matrix b;
     Matrix W_gradent;
     Matrix b_gradent;
     Matrix x_conn;

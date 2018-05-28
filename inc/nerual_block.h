@@ -4,25 +4,12 @@
 #include "Matrix.h"
 #include <string>
 class nerualBlock {
-public;
-    virtual Matrix forward(Matrix X) {
-      return NULL;
-    };
-    virtual Matrix backward(Matrix X) {
-      return NULL;
-    };
-    virtual vector<vector<Matrix> > forward_cnn(vector<vector<Matrix> >X) {
-      return NULL;
-    };
-    virtual vector<vector<Matrix> > backward_cnn(vector<vector<Matrix> >X) {
-      return NULL;
-    };
-    virtual Matrix forward_flatten(vector<vector<Matrix> > X) {
-      return NULL;
-    }
-    virtual Matrix backward_flatten(vector<vector<Matrix> > X) {
-      return NULL;
-    }
+public:
+    Matrix forward(Matrix X);
+    Matrix backward(Matrix X);
+    vector<vector<Matrix> > forward_cnn(vector<vector<Matrix> >X);
+    vector<vector<Matrix> > backward_cnn(vector<vector<Matrix> >X);
+    Matrix forward_flatten(vector<vector<Matrix> > X);
+    vector<vector<Matrix> > backward_flatten(Matrix X);
 };
-
 #endif
